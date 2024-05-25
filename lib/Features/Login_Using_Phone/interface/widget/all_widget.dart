@@ -16,54 +16,34 @@ Widget insertNaumber(BuildContext context) {
 }
 
 Widget nextButton(BuildContext context) {
-  return 
-   ElevatedButton(
-          onPressed: () {
-                  // هنا يمكنك إضافة أي إجراء ترغب فيه عند الضغط على الزر
-                          SCREENLOGIC.submentPhone(context);
-                                },
-                                      style: ElevatedButton.styleFrom(
-                                              foregroundColor: Colors.white, backgroundColor: Colors.black, // لون النص
-                                                              shape: RoundedRectangleBorder(
-                                                                        borderRadius: BorderRadius.circular(16.0), // الجوانب المنحنية
-                                                                                ),
-                                                                                        padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0), // padding لإعطاء الزر شكلاً مربعاً
-                                                                                              ),
-                                                                                                    child: Text(
-                                                                                                            'Next',
-                                                                                                                    style: TextStyle(
-                                                                                                                              color: Colors.white,
-                                                                                                                                      ),
-                                                                                                                                            ),
-                                                                                                                                                );
-   
-   /*Inkwell ()
-   onTap: SCREENLOGIC.submentPhone(context),
-    child: Container(alignment: Alignment.center,
-      margin: const EdgeInsets.all(8),
-      width: MediaQuery.of(context).size.width / 3,
-      height: MediaQuery.of(context).size.height / 9,
-      decoration: BoxDecoration(
-          color: COLORS.black, borderRadius: BorderRadius.circular(10)),
-      child: Text(
-        'Next',
-        style: TextStyle(color: COLORS.white,fontSize: 25),
+  return ElevatedButton(
+    onPressed:() =>SCREENLOGIC.submentPhone(context),
+    style: ElevatedButton.styleFrom(
+      foregroundColor: Colors.white, backgroundColor: COLORS.black, 
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
+      padding:const EdgeInsets.symmetric(
+          horizontal: 24.0, vertical: 16.0),
+    ),
+    child: Text(
+      'Next',
+      style: TextStyle(
+        color: COLORS.white,
       ),
     ),
-  );*/
+  );
+
 }
 
-Widget insertOTP(BuildContext context){
+Widget insertOTP(BuildContext context) {
   return OTPTextField(
-  length: 5,
-  width: MediaQuery.of(context).size.width,
-  fieldWidth: 80,
-  style: const TextStyle(
-    fontSize: 17
-  ),
-  textFieldAlignment: MainAxisAlignment.spaceAround,
-  fieldStyle: FieldStyle.underline,
-  onCompleted: (pin) {
-  },
-);
-} 
+    length: 5,
+    width: MediaQuery.of(context).size.width,
+    fieldWidth: 80,
+    style: const TextStyle(fontSize: 17),
+    textFieldAlignment: MainAxisAlignment.spaceAround,
+    fieldStyle: FieldStyle.underline,
+    onCompleted: (pin) {},
+  );
+}
