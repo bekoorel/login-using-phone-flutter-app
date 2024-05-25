@@ -17,7 +17,7 @@ Widget insertNaumber(BuildContext context) {
 
 Widget nextButton(BuildContext context) {
   return InkWell(
-    onTap: SCREENLOGIC.submentPhone(),
+    onTap: SCREENLOGIC.submentPhone(context),
     child: Container(alignment: Alignment.center,
       margin: const EdgeInsets.all(8),
       width: MediaQuery.of(context).size.width / 3,
