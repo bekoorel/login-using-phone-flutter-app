@@ -16,8 +16,8 @@ Widget insertNaumber(BuildContext context) {
 }
 
 Widget nextButton(BuildContext context) {
-  return InkWell(
-    onTap: SCREENLOGIC.submentPhone(context),
+  return IconButton(onPressed: ()=>SCREENLOGIC.submentPhone(context), icon: Icon(Icons.adb)); /*InkWell(
+   onTap: SCREENLOGIC.submentPhone(context),
     child: Container(alignment: Alignment.center,
       margin: const EdgeInsets.all(8),
       width: MediaQuery.of(context).size.width / 3,
@@ -29,7 +29,7 @@ Widget nextButton(BuildContext context) {
         style: TextStyle(color: COLORS.white,fontSize: 25),
       ),
     ),
-  );
+  );*/
 }
 
 Widget insertOTP(BuildContext context){

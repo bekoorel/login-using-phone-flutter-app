@@ -3,9 +3,14 @@ import 'package:login_using_phone/colors/colors.dart';
 
 import '../widget/all_widget.dart';
 
-class EnterYourPhone extends StatelessWidget {
+class EnterYourPhone extends StatefulWidget {
   const EnterYourPhone({super.key});
 
+  @override
+  State<EnterYourPhone> createState() => _EnterYourPhoneState();
+}
+
+class _EnterYourPhoneState extends State<EnterYourPhone> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
