@@ -16,7 +16,28 @@ Widget insertNaumber(BuildContext context) {
 }
 
 Widget nextButton(BuildContext context) {
-  return IconButton(onPressed: ()=>SCREENLOGIC.submentPhone(context), icon: Icon(Icons.adb)); /*InkWell(
+  return 
+   ElevatedButton(
+          onPressed: () {
+                  // هنا يمكنك إضافة أي إجراء ترغب فيه عند الضغط على الزر
+                          SCREENLOGIC.submentPhone(context);
+                                },
+                                      style: ElevatedButton.styleFrom(
+                                              foregroundColor: Colors.white, backgroundColor: Colors.black, // لون النص
+                                                              shape: RoundedRectangleBorder(
+                                                                        borderRadius: BorderRadius.circular(16.0), // الجوانب المنحنية
+                                                                                ),
+                                                                                        padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0), // padding لإعطاء الزر شكلاً مربعاً
+                                                                                              ),
+                                                                                                    child: Text(
+                                                                                                            'Next',
+                                                                                                                    style: TextStyle(
+                                                                                                                              color: Colors.white,
+                                                                                                                                      ),
+                                                                                                                                            ),
+                                                                                                                                                );
+   
+   /*Inkwell ()
    onTap: SCREENLOGIC.submentPhone(context),
     child: Container(alignment: Alignment.center,
       margin: const EdgeInsets.all(8),
