@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_using_phone/colors/colors.dart';
+import 'package:otp_text_field/otp_field.dart';
+import 'package:otp_text_field/style.dart';
 
 import '../../logic/all_logic.dart';
 
@@ -30,3 +32,18 @@ Widget nextButton(BuildContext context) {
     ),
   );
 }
+
+Widget insertOTP(BuildContext context){
+  return OTPTextField(
+  length: 5,
+  width: MediaQuery.of(context).size.width,
+  fieldWidth: 80,
+  style: const TextStyle(
+    fontSize: 17
+  ),
+  textFieldAlignment: MainAxisAlignment.spaceAround,
+  fieldStyle: FieldStyle.underline,
+  onCompleted: (pin) {
+  },
+);
+} 
