@@ -1,0 +1,6 @@
+class SCREENLOGIC{
+
+  static  submentPhone(){
+
+  }
+}

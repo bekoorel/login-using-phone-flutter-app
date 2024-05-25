@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'interface/screens/enter_your_phone.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -9,10 +11,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-   
-    
-     // home:  ,
+    return const MaterialApp(debugShowCheckedModeBanner: false,
+      home:  EnterYourPhone() ,
     );
   }
 }
