@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:login_using_phone/colors/colors.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
-
 import '../../logic/all_logic.dart';
 
 Widget insertNaumber(BuildContext context) {
