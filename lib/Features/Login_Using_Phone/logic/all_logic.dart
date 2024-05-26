@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import '../interface/screens/enter_the_otp.dart';
-
-class SCREENLOGIC {
-  //bug
+class LOGICLOGIN {
   static submentPhone(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) {
-          return const INSERTOTP();
-        },
-      ),
-    );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.go('/INSERTOTP');
+    });
+  }
+
+  static submentotp(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.go('/mainscreen');
+    });
+  }
+    static logout(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.go('/');
+    });
   }
 }

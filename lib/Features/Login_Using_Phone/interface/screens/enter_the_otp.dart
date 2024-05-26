@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:login_using_phone/Features/Login_Using_Phone/logic/all_logic.dart';
 
 import '../widget/all_widget.dart';
 
-class INSERTOTP extends StatefulWidget {
+class INSERTOTP extends StatelessWidget {
   const INSERTOTP({super.key});
 
-  @override
-  State<INSERTOTP> createState() => _INSERTOTPState();
-}
-
-class _INSERTOTPState extends State<INSERTOTP> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          insertOTP(context),
+          Center(child: insertOTP(context)),
+          nextButton(
+            context,"DONE",
+            () => LOGICLOGIN.submentotp(context),
+          ),
         ],
       ),
     );
