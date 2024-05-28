@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "318149085919",
-    "project_id": "login-using-phone-2c4a7",
-    "storage_bucket": "login-using-phone-2c4a7.appspot.com"
+    "project_number": "423818050881",
+    "project_id": "loginappusingphone",
+    "storage_bucket": "loginappusingphone.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:318149085919:android:af61c58e73a739fa87376a",
+        "mobilesdk_app_id": "1:423818050881:android:c10abcdf24397cb59d35c0",
         "android_client_info": {
-          "package_name": "com.android.application"
+          "package_name": "com.example.login_using_phone_v2"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDUpQaxMsPspvFAbfWFSPM7wV48J773RVQ"
+          "current_key": "AIzaSyCf7_NFMwDpwy1zzwD5WHII62Gp-uIQQLI"
         }
       ],
       "services": {

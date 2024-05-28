@@ -1,9 +1,9 @@
 plugins {
     id "com.android.application"
+    id 'com.google.gms.google-services'
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
-    id("com.google.gms.google-services") version "4.4.1" apply false
 }
 
 def localProperties = new Properties()
@@ -25,9 +25,9 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace = "com.example.login_using_phone"
+    namespace = "com.example.login_using_phone_v2"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = '26.1.10909125'
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -36,13 +36,14 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.login_using_phone"
+        applicationId = "com.example.login_using_phone_v2"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdk = 24
+        minSdk = 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -56,4 +57,8 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+  implementation 'androidx.multidex:multidex:2.0.1'
 }

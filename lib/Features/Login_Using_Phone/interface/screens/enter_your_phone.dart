@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:login_using_phone/colors/colors.dart';
+import 'package:login_using_phone_v2/colors/colors.dart';
 
 import '../../logic/all_logic.dart';
 import '../widget/all_widget.dart';
 
+// ignore: must_be_immutable
 class EnterYourPhone extends StatelessWidget {
-  const EnterYourPhone({super.key});
+   EnterYourPhone({super.key});
 
+  final TextEditingController _phoneController = TextEditingController();
+LOGICLOGIN logiclogin =LOGICLOGIN();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +26,9 @@ class EnterYourPhone extends StatelessWidget {
           const Spacer(
             flex: 2,
           ),
-          insertNaumber(context),
+          insertNaumber(context,_phoneController),
          const Spacer(flex: 1,),
-          nextButton(context,"NEXT", () => LOGICLOGIN.submentPhone(context)),
+          nextButton(context,"NEXT", () => logiclogin.submentPhone(context,_phoneController.text)),
          const Spacer(flex: 2,),
          
         ],

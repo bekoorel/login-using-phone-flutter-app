@@ -1,6 +1,6 @@
 {
-    "name": "login_using_phone",
-    "short_name": "login_using_phone",
+    "name": "login_using_phone_v2",
+    "short_name": "login_using_phone_v2",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:login_using_phone/colors/colors.dart';
+import 'package:login_using_phone_v2/colors/colors.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 
-Widget insertNaumber(BuildContext context) {
+Widget insertNaumber(BuildContext context,controllerphone) {
   return Container(
     margin: const EdgeInsets.all(15),
-    child: const TextField(
-      decoration: InputDecoration(
+    child:  TextField(controller: controllerphone,
+      decoration:const InputDecoration(
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(20)))),
     ),
@@ -41,14 +41,14 @@ Widget nextButton(BuildContext context, textchild,Function dosomsing) {
     ),
   );
 }
-Widget insertOTP(BuildContext context) {
+Widget insertOTP(BuildContext context,otpController) {
   return OTPTextField(
     length: 6,
     width: MediaQuery.of(context).size.width / 1.5,
-    //fieldWidth:  MediaQuery.of(context).size.width/7,
     style: const TextStyle(fontSize: 17),
     textFieldAlignment: MainAxisAlignment.spaceEvenly,
     fieldStyle: FieldStyle.box,
-    onCompleted: (pin) {},
+   // onCompleted: (pin) {},
+   controller: otpController,
   );
 }

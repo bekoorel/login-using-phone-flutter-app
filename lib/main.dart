@@ -1,11 +1,12 @@
-//import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:login_using_phone/router/page_router.dart';
+import 'package:login_using_phone_v2/firebase_options.dart';
+import 'package:login_using_phone_v2/router/page_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
- // await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -20,5 +21,5 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routerConfig: router,
     );
-  } 
+  }
 }
