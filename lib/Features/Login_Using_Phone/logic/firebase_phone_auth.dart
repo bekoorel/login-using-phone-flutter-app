@@ -1,11 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class PHONEAUTH {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   String? verificationId;
 
 //استدعي هذه الداله بعد ادخال رقم الهاتف ليتم بعدها ارسال الكود
-  void sendCode(phoneNumberForVerify) async {
+   sendCode(phoneNumberForVerify, BuildContext context) async {
     await _auth.verifyPhoneNumber(
       phoneNumber: phoneNumberForVerify,
       verificationCompleted: (PhoneAuthCredential credential) async {
@@ -13,11 +15,24 @@ class PHONEAUTH {
         checkUserStatus();
       },
       verificationFailed: (FirebaseAuthException e) {
+        print(
+            'Verification failed: ------------------------------------------');
         print('Verification failed: ${e.message}');
+        print(
+            'Verification failed: ------------------------------------------');
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              content: Text('${e.message}'),
+            );
+          },
+        );
       },
       codeSent: (String verificationId, int? resendToken) {
         // setState(() {
         verificationId = verificationId;
+         context.go('/INSERTOTP');
         //  });
       },
       codeAutoRetrievalTimeout: (String verificationId) {
@@ -36,6 +51,7 @@ class PHONEAUTH {
         smsCode: smsCode,
       );
       await _auth.signInWithCredential(credential);
+
       checkUserStatus();
     }
   }
@@ -60,7 +76,6 @@ class PHONEAUTH {
   void logout() async {
     await _auth.signOut();
     // Navigate back to phone number input screen
-   // Navigator.pop(context);
+    // Navigator.pop(context);
   }
-
 }
