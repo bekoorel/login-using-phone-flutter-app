@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_using_phone_v2/colors/colors.dart';
+import 'package:login_using_phone_v2/core/colors/colors.dart';
 
 import '../../logic/all_logic.dart';
 import '../widget/all_widget.dart';

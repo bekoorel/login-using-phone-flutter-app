@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:login_using_phone_v2/Features/Login_Using_Phone/logic/all_logic.dart';
-import 'package:login_using_phone_v2/colors/colors.dart';
+import 'package:login_using_phone_v2/core/colors/colors.dart';
 import 'package:otp_text_field/otp_field.dart';
 
 import '../widget/all_widget.dart';
@@ -20,7 +20,7 @@ class _INSERTOTPState extends ConsumerState<INSERTOTP> {
   LOGICLOGIN logiclogin = LOGICLOGIN();
 @override
   void initState() {
-    // TODO: implement initState
+   
     super.initState();
     ref.read(countdownProvider.notifier).startTimer();
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:login_using_phone_v2/firebase_options.dart';
-import 'package:login_using_phone_v2/router/page_router.dart';
+import 'package:login_using_phone_v2/core/router/page_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

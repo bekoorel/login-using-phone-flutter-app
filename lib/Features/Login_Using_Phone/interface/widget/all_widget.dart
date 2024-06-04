@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_using_phone_v2/colors/colors.dart';
+import 'package:login_using_phone_v2/core/colors/colors.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 
