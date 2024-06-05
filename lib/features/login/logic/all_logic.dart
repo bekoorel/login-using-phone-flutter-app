@@ -1,10 +1,7 @@
-
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:login_using_phone_v2/Features/Login_Using_Phone/logic/firebase_phone_auth.dart';
+import 'package:login_using_phone_v2/Features/login/logic/firebase_phone_auth.dart';
 
 class LOGICLOGIN {
   PHONEAUTH phoneauthclass = PHONEAUTH();
@@ -25,31 +22,16 @@ class LOGICLOGIN {
   }
 }
 
-final countdownProvider = NotifierProvider<COUNTEROTP, int>(() {
-  return COUNTEROTP();
-});
+class COUNTEROTP extends Notifier<dynamic> {
+  String tcounter = '0';
 
-class COUNTEROTP extends Notifier<int> {
-  int tcounter = 0;
   @override
-  int build() {
+  build() {
     return tcounter;
   }
 
   void increment() {
-    tcounter++;
-    state = tcounter;  // تحديث الحالة لإعلام المستمعين بالتغيير
+    tcounter = 'done';
+    state = tcounter;
   }
-   void startTimer() {
-    Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (state == 60) {
-       
-      } else {
-     state = tcounter++;
-      }
-    });
-  }
-
-
 }
-

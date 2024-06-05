@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_using_phone_v2/Features/Login_Using_Phone/interface/widget/all_widget.dart';
-import 'package:login_using_phone_v2/Features/Login_Using_Phone/logic/all_logic.dart';
+import 'package:login_using_phone_v2/Features/login/interface/widget/all_widget.dart';
+import 'package:login_using_phone_v2/Features/login/logic/all_logic.dart';
 
 // ignore: must_be_immutable
 class MIANSCREEN extends StatelessWidget {

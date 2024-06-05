@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:login_using_phone_v2/core/colors/colors.dart';
+
 import 'package:otp_text_field/otp_field.dart';
+import 'package:otp_text_field/otp_field_style.dart';
 import 'package:otp_text_field/style.dart';
 
-Widget insertNaumber(BuildContext context,controllerphone) {
+Widget insertNaumber(BuildContext context, controllerphone) {
   return Container(
     margin: const EdgeInsets.all(15),
-    child:  TextField(controller: controllerphone,
-      decoration:const InputDecoration(
+    child: TextField(
+      controller: controllerphone,
+      decoration: const InputDecoration(
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(20)))),
     ),
   );
 }
 
-Widget nextButton(BuildContext context, textchild,Function dosomsing) {
+Widget nextButton(BuildContext context, textchild, Function dosomsing) {
   return Container(
     height: MediaQuery.of(context).size.height / 10,
     width: MediaQuery.of(context).size.width / 4,
@@ -41,14 +44,24 @@ Widget nextButton(BuildContext context, textchild,Function dosomsing) {
     ),
   );
 }
-Widget insertOTP(BuildContext context,otpController) {
+
+Widget insertOTP(BuildContext context) {
   return OTPTextField(
     length: 6,
-    width: MediaQuery.of(context).size.width / 1.5,
-    style: const TextStyle(fontSize: 17),
+    width: MediaQuery.of(context).size.width / 1.1,
+    fieldWidth: 50,
+    keyboardType: TextInputType.number,
+
+    style: const TextStyle(fontSize: 25),
     textFieldAlignment: MainAxisAlignment.spaceEvenly,
     fieldStyle: FieldStyle.box,
-   // onCompleted: (pin) {},
-   controller: otpController,
+    outlineBorderRadius: 22.0,
+    otpFieldStyle: OtpFieldStyle(
+      backgroundColor: COLORS.greenAccent,
+      borderColor: COLORS.blueAccent,
+    ),
+    // onCompleted: (pin) {},
+    // controller: otpController,
+    onChanged: (value) {},
   );
 }
