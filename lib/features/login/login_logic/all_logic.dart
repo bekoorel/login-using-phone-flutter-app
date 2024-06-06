@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:login_using_phone_v2/Features/login/logic/firebase_phone_auth.dart';
+import 'package:login_using_phone_v2/features/login/login_logic/firebase_phone_auth.dart';
 
-class LOGICLOGIN {
+class LOGICLOGIN  {
   PHONEAUTH phoneauthclass = PHONEAUTH();
 
   submentPhone(BuildContext context, String phone) async {
@@ -22,16 +21,11 @@ class LOGICLOGIN {
   }
 }
 
-class COUNTEROTP extends Notifier<dynamic> {
+class COUNTEROTP extends ChangeNotifier {
   String tcounter = '0';
 
-  @override
-  build() {
-    return tcounter;
-  }
-
-  void increment() {
-    tcounter = 'done';
-    state = tcounter;
+  void increment(v) {
+    tcounter = v;
+    notifyListeners();
   }
 }

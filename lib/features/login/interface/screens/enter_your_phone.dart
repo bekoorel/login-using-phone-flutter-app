@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:login_using_phone_v2/core/colors/colors.dart';
-
-import '../../logic/all_logic.dart';
-import '../widget/all_widget.dart';
+import 'package:login_using_phone_v2/core/sherd_widget/custam_sherd_widget.dart';
+import 'package:login_using_phone_v2/features/login/login_logic/providers.dart';
 
 // ignore: must_be_immutable
 class EnterYourPhone extends StatelessWidget {
-   EnterYourPhone({super.key});
+  EnterYourPhone({super.key});
 
   final TextEditingController _phoneController = TextEditingController();
-LOGICLOGIN logiclogin =LOGICLOGIN();
-  
+//LOGICLOGIN logiclogin =LOGICLOGIN();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(crossAxisAlignment: CrossAxisAlignment.start,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Spacer(
             flex: 1,
@@ -26,11 +27,23 @@ LOGICLOGIN logiclogin =LOGICLOGIN();
           const Spacer(
             flex: 2,
           ),
-          insertNaumber(context,_phoneController),
-         const Spacer(flex: 1,),
-          nextButton(context,"NEXT", () => logiclogin.submentPhone(context,_phoneController.text)),
-         const Spacer(flex: 2,),
-         
+          custamTextFild(context, _phoneController),
+          const Spacer(
+            flex: 1,
+          ),
+          //SUPMENT_NUMBER
+          Consumer(
+            builder: (context, ref, child) => castamButton(
+              context,
+              "NEXT",
+              () => ref
+                  .read(fireBaseLogin)
+                  .submentPhone(context, _phoneController.text),
+            ),
+          ),
+          const Spacer(
+            flex: 2,
+          ),
         ],
       ),
     );
