@@ -10,10 +10,10 @@ List<RouteBase> routes = [
   ),
   GoRoute(
     path: '/INSERTOTP',
-    builder: (context, state) => INSERTOTP(),
+    builder: (context, state) => const INSERTOTP(),
   ),
   GoRoute(
     path: '/mainscreen',
-    builder: (context, state) => MIANSCREEN(),
+    builder: (context, state) => const MIANSCREEN(),
   ),
 ];

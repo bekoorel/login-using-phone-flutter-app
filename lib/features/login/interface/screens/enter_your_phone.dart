@@ -38,7 +38,7 @@ class EnterYourPhone extends StatelessWidget {
               "NEXT",
               () => ref
                   .read(fireBaseLogin)
-                  .submentPhone(context, _phoneController.text),
+                  .sendCode(context, _phoneController.text),
             ),
           ),
           const Spacer(
