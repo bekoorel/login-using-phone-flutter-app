@@ -10,6 +10,7 @@ class MIANSCREEN extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        /*
       body: Center(
         child: Consumer(
           builder: (context, ref, child) => castamButton(
@@ -18,7 +19,7 @@ class MIANSCREEN extends StatelessWidget {
             () => ref.read(fireBaseLogin).logout(context),
           ),
         ),
-      ),
-    );
+      ),*/
+        );
   }
 }

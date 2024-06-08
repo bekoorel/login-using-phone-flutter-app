@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:login_using_phone_v2/core/colors/colors.dart';
 import 'package:login_using_phone_v2/features/login/login_logic/providers.dart';
 
@@ -27,7 +28,8 @@ Widget insertOTP(BuildContext context) {
 
         onCompleted: (value) {
           print('-----------------------$value -------------------------');
-          ref.read(fireBaseLogin).verifyCode(value, context);
+          ref.read(fireBaseLogin).signInWithSmsCode(value);
+          context.go('/mainscreen');
         }),
   );
 }
