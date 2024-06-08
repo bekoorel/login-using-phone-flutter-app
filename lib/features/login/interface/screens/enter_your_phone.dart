@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:login_using_phone_v2/core/colors/colors.dart';
 import 'package:login_using_phone_v2/core/sherd_widget/custam_sherd_widget.dart';
 import 'package:login_using_phone_v2/features/login/login_logic/providers.dart';
@@ -33,13 +34,10 @@ class EnterYourPhone extends StatelessWidget {
           ),
           //SUPMENT_NUMBER
           Consumer(
-            builder: (context, ref, child) => castamButton(
-              context,
-              "NEXT",
-              () => ref
-                  .read(fireBaseLogin)
-                  .sendCode(context, _phoneController.text),
-            ),
+            builder: (context, ref, child) => castamButton(context, "NEXT", () {
+              ref.read(fireBaseLogin).verifyPhoneNumber(_phoneController.text);
+              context.go('/INSERTOTP');
+            }),
           ),
           const Spacer(
             flex: 2,
