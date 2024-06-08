@@ -5,7 +5,7 @@
 
 # project folders
 
-<img src="redme_images/project_folders.png" />
+<img src="redme_images/project_folders.png" width="400" />
 
 
 # step1
