@@ -5,8 +5,7 @@ This project is just a simple training application on how to organize project fo
 
 Screenshot_1717875874.png[step 1]
 
-[login-using-phone-flutter-app
-/Screenshot_1717876116.png][step 2]
+[https://github.com/bekoorel/login-using-phone-flutter-app/blob/main/Screenshot%202024-06-08%20232158.png][step 2]
 
 login-using-phone-flutter-app
 /Screenshot_1717876116.png[step 3]
