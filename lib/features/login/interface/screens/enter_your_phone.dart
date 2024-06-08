@@ -15,6 +15,7 @@ class EnterYourPhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -25,6 +26,8 @@ class EnterYourPhone extends StatelessWidget {
             'Enter your Phone Number',
             style: TextStyle(color: COLORS.black, fontSize: 30),
           ),
+         
+          
           const Spacer(
             flex: 2,
           ),
@@ -35,7 +38,7 @@ class EnterYourPhone extends StatelessWidget {
           //SUPMENT_NUMBER
           Consumer(
             builder: (context, ref, child) => castamButton(context, "NEXT", () {
-              ref.read(fireBaseLogin).verifyPhoneNumber(_phoneController.text);
+              ref.read(fireBaseLogin).verifyPhoneNumber('+2${_phoneController.text}');
               context.go('/INSERTOTP');
             }),
           ),

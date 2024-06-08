@@ -17,6 +17,7 @@ class MIANSCREEN extends StatelessWidget {
             "LOGOUT",
             () async{
             await  ref.read(fireBaselogout).logeOut();
+              // ignore: use_build_context_synchronously
               context.go('/');
             },
           ),

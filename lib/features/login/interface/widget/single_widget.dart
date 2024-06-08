@@ -11,6 +11,8 @@ import 'package:otp_text_field/style.dart';
 Widget insertOTP(BuildContext context) {
   return Consumer(
     builder: (context, ref, child) => OTPTextField(
+
+
         length: 6,
         width: MediaQuery.of(context).size.width / 1.1,
         fieldWidth: 50,
@@ -20,14 +22,13 @@ Widget insertOTP(BuildContext context) {
         fieldStyle: FieldStyle.box,
         outlineBorderRadius: 22.0,
         otpFieldStyle: OtpFieldStyle(
-          backgroundColor: COLORS.greenAccent,
+          enabledBorderColor: COLORS.blueAccent,
+          backgroundColor: COLORS.gray.withOpacity(0.2),
           borderColor: COLORS.blueAccent,
         ),
-        // onCompleted: (pin) {},
-        // controller: otpController,
+     
 
         onCompleted: (value) {
-          print('-----------------------$value -------------------------');
           ref.read(fireBaseLogin).signInWithSmsCode(value);
           context.go('/mainscreen');
         }),

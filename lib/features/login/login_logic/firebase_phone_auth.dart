@@ -14,7 +14,7 @@ class PhoneAuth extends ChangeNotifier {
       },
       verificationFailed: (FirebaseAuthException e) {
         // Verification failed
-        print(e.message);
+   
       },
       codeSent: (String verificationId, int? resendToken) async {
         // Save the verification ID for future use

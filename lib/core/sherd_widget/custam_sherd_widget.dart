@@ -4,16 +4,19 @@ import 'package:login_using_phone_v2/core/colors/colors.dart';
 Widget custamTextFild(BuildContext context, controllerphone) {
   return Container(
     margin: const EdgeInsets.all(15),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(18),
+        color: COLORS.white,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+              color: COLORS.gray, blurRadius: 5.20, offset: const Offset(0, 0))
+        ]),
     child: TextField(
+      textAlign: TextAlign.center,
       autofocus: true,
       controller: controllerphone,
       decoration: const InputDecoration(
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(20),
-          ),
-        ),
-      ),
+          border: InputBorder.none, hintText: '+20111XXXXX'),
     ),
   );
 }
