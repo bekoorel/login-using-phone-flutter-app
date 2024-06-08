@@ -10,14 +10,14 @@
 
 # step1
 
-<img src="redme_images/step1.png" width="600" />
+<img src="redme_images/step1.png" width="300" />
 
 
 # project step2
 
-<img src="redme_images/step2.png" width="600" />
+<img src="redme_images/step2.png" width="300" />
 
 
 # project step3
 
-<img src="redme_images/step3.png" width="600" />
+<img src="redme_images/step3.png" width="300" />
