@@ -10,24 +10,18 @@ class PhoneAuth extends ChangeNotifier {
       phoneNumber: phoneNumber,
       verificationCompleted: (PhoneAuthCredential credential) async {
         // Auto-retrieve verification code
-        print('----------------Auto-retrieve verification code--------------');
         await _auth.signInWithCredential(credential);
-        print(
-            '----------------Auto-retrieve verification code completed--------------');
       },
       verificationFailed: (FirebaseAuthException e) {
         // Verification failed
-        print('----------------Verification failed--------------');
         print(e.message);
       },
       codeSent: (String verificationId, int? resendToken) async {
         // Save the verification ID for future use
-        print('----------------Code sent--------------');
         _verificationId = verificationId;
       },
       codeAutoRetrievalTimeout: (String verificationId) {
         // Auto-retrieve timeout
-        print('----------------Auto-retrieve timeout--------------');
         _verificationId = verificationId;
       },
       timeout: const Duration(seconds: 60),
@@ -41,10 +35,33 @@ class PhoneAuth extends ChangeNotifier {
         smsCode: smsCode,
       );
       await _auth.signInWithCredential(credential);
-      print('----------------Sign in with credential completed--------------');
     } catch (e) {
-      print('----------------Sign in with credential failed--------------');
       print(e.toString());
+    }
+  }
+}
+
+class AuthService extends PhoneAuth {
+  // Check if the user is already signed in
+  bool isUserLoggedIn() {
+    final user = _auth.currentUser;
+    if (user != null) {
+      print('User is logged in: ${user.phoneNumber}');
+      return true;
+    } else {
+      print('No user is logged in');
+      return false;
+    }
+  }
+}
+
+class LOGEOUT extends PhoneAuth {
+  Future logeOut() async {
+    try {
+      print('---------------------out-------------------');
+      await _auth.signOut();
+    } catch (e) {
+      print('---------------------$e-------------------');
     }
   }
 }
