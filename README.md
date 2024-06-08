@@ -5,19 +5,19 @@
 
 # project folders
 
-<img src="redme_images/project_folders.png" width="400" />
+<img src="redme_images/project_folders.png" width="600" />
 
 
 # step1
 
-<img src="redme_images/step1.png" />
+<img src="redme_images/step1.png" width="600" />
 
 
 # project step2
 
-<img src="redme_images/step2.png" />
+<img src="redme_images/step2.png" width="600" />
 
 
 # project step3
 
-<img src="redme_images/step3.png" />
+<img src="redme_images/step3.png" width="600" />
